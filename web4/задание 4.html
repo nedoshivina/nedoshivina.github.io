@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Task</title>
+        <script src="script.js"></script>
+    </head>
+    <body  align="center">
+
+       <div>
+        <h3>Площадь фигуры по заданным параметрам. Квадрат.</h3>
+           <div class="content">
+            <span>Сторона: </span>
+       
+            <input type="number" id="side" value="0">
+       
+        <button onclick="square();">Результат</button>
+        <span id="answer"></span>
+    </div>
+    <script>
+        function square() {
+            let a = Number(document.getElementById('side').value)
+            if (a <= 0) {
+                document.getElementById('answer').innerHTML = 'Сторона должна быть положительной!'
+                return
+            }
+            let S = a * a
+            document.getElementById('answer').innerHTML = S 
+        }
+    </script>
+          
+
+       <div>
+        <h3>Дана последовательность Х/2,Х3/4,Х6/8,... Найти и напечатать сумму элементов последовательности с 3 по I2-тый.</h3>
+        <div >
+          <span>Введите Х:  </span>
+          <input type="number" id="x">
+          <button type="button" onclick=btn2() id="btn2">Вычислить</button>
+        </div>
+        <div style="margin-top: 10px; margin-bottom: 10px;">
+          <span>Знаков после запятой:  </span>
+          <input type="number" min="1" max="10" id="after2" value="3">
+         </div>
+        <div style="margin-top: 10px; margin-bottom: 10px;">
+          <span>Результат:  </span>
+          <input type="text" id="result2">
+        </div>
+
+        <div align="center">
+         <h3>Матрица М состоит из 4 строк, 3 столбцов. Вычесть из всех строк, начиная со второй, первую строку.</h3>
+          <div style="margin-top: 10px; margin-bottom: 10px;">
+            <input class="cell" type="number" value="1">
+            <input class="cell" type="number" value="2">
+            <input class="cell" type="number" value="3">
+          </div>
+          <div style="margin-top: 10px; margin-bottom: 10px;">
+            <input class="cell" type="number" value="-3">
+            <input class="cell" type="number" value="-2">
+            <input class="cell" type="number" value="-1">
+          </div>
+          <div style="margin-top: 10px; margin-bottom: 10px;">
+            <input class="cell" type="number" value="3">
+            <input class="cell" type="number" value="2">
+            <input class="cell" type="number" value="1">
+          </div>
+          <div style="margin-top: 10px; margin-bottom: 10px;">
+            <input class="cell" type="number" value="-1">
+            <input class="cell" type="number" value="-2">
+            <input class="cell" type="number" value="-3">
+          </div>
+          <button type="button" onclick=btn3() id="btn2">Вычислить</button>
+        </div>
+
+        <div align="center">
+          <h3>Функции</h3>
+          <div style="margin-top: 10px; margin-bottom: 10px;">
+            <input id="min" type="number" value="0">
+            <input id="max" type="number" value="100">
+            <input id="result3" type="number"><br>
+          </div>
+          <span><button id="btn4" onclick=btn4()>Рандом</button></span>
+          <h4 onclick=console.log(getRandomInt())>getRandomInt(min, max)</h4>
+          <h4 onclick=console.log(getArray(25))>getArray(n)</h4>
+          <h4 onclick=console.log(getResultArray(getArray(25)))>getResultArray(a)</h4>
+          <h4 onclick=console.log(matrix_from(getResultArray(getArray(25)),5))>matrix_from(array, n)</h4>
+        </div>
+
+       </div>
+    </body>
+</html>
