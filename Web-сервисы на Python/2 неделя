@@ -1,0 +1,49 @@
+from bs4 import BeautifulSoup  # Импортируем bs
+import re  # Импортируем регулярные выражения
+
+
+def parse(path_to_file):
+    imgs= 0
+    headers = 0
+    lists = 0
+    linkslen = 1
+    curlen = 1
+
+    file = open(path_to_file, encoding='utf-8')  # Открываем файл
+    soup = BeautifulSoup(file, 'lxml')
+    body = soup.find(id="bodyContent")
+    tag = body.find_next("a")
+
+    for section in body.find_all('a', 'image'):  # Пробегаемся по всем тегам 'a' с классом 'image'
+        if int(section.find('img').get('width')) > 199:  # Проверяем ширину картинки
+            imgs += 1  # Счетчик
+
+    for section in body.find_all(re.compile("^h[1-6]")):  # Пробегаемся по всем тегам 'h'(h1,h2,h3,h4,h5,h6)
+        if section.text[0] == 'E' or section.text[0] == 'T' or section.text[0] == 'C':  # Проверяем первую букву в слове
+            headers += 1  # Счетчик
+
+
+    while (tag):
+        curlen = 1
+        for tag in tag.find_next_siblings():
+            if tag.name != 'a':                    # Поиск длины максимальной последовательности ссылок
+                break
+            curlen += 1
+        if curlen > linkslen:
+            linkslen = curlen
+        tag = tag.find_next("a")
+
+    html_lists = body.find_all(['ul', 'ol'])  # Находим все списки
+    for html_list in html_lists:  # Пробегаемся по листу
+        if not html_list.find_parents(['ul', 'ol']):  # Если нет вложений, то + 1
+            lists += 1
+
+    print([imgs, headers, linkslen, lists])  # [13, 10, 12, 40]
+
+
+if __name__ == '__main__':
+    name = input("Введите название страницы = ")
+    try:
+        parse('wiki/{}'.format(name))              # Тут и так все понятно
+    except BaseException:
+        print("Такого файла не существует")
