@@ -1,0 +1,142 @@
+header {
+ display: block; /* Для старых браузеров */
+ height: 260px; /* Высота шапки */
+ background: url(заголовок1.png) no-repeat center bottom;
+}
+.back {
+  background-image: url('фон2.jpg');
+}
+.post-wrap {
+   width: 1000px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+.post-item {
+   padding: 10px;
+}
+.post-item-wrap {
+   background: #F7F7F2;
+   position: relative;
+}
+.post-item-wrap:hover:after {
+   top: 5px;
+   left: 5px;
+   transform: rotate(2deg);
+}
+.post-link {
+   text-decoration: none;
+   display: block;
+   padding: 30px;
+}
+.post-title {
+   color: #A60000;
+   margin-bottom: 15px;
+   transition: .3s ease-in-out;
+   font-size: 18px;
+}
+.post-item-wrap:hover .post-title {
+   color: #200772;
+}
+.border {
+list-style: none;
+padding: 0;
+}
+a{
+  text-decoration: none; 
+  color: black;
+}
+.border li {
+padding: 7px 20px;
+margin-bottom: 10px;
+border-radius: 5px;
+border-left: 10px solid #A60000; 
+box-shadow: 2px -2px 5px 0 rgba(0,0,0,.1),
+     -2px -2px 5px 0 rgba(0,0,0,.1),
+    2px 2px 5px 0 rgba(0,0,0,.1),
+    -2px 2px 5px 0 rgba(0,0,0,.1);
+font-size: 18px;
+letter-spacing: 2px;
+transition: 0.3s all linear;
+}
+.border li:nth-child(2){border-color: #A60000;}
+.border li:nth-child(3){border-color: #A60000;}
+.border li:nth-child(4){border-color: #A60000;}
+.border li:nth-child(5){border-color: #A60000;}
+.border li:nth-child(6){border-color: #A60000;}
+.border li:nth-child(7){border-color: #A60000;}
+.border li:nth-child(8){border-color: #A60000;}
+.border li:hover {border-left: 10px solid transparent;}
+.border li:nth-child(1):hover {border-right: 10px solid #A60000;}
+.border li:nth-child(2):hover {border-right: 10px solid #A60000;}
+.border li:nth-child(3):hover {border-right: 10px solid #A60000;}
+.border li:nth-child(4):hover {border-right: 10px solid #A60000;}
+.border li:nth-child(5):hover {border-right: 10px solid #A60000;}
+.border li:nth-child(6):hover {border-right: 10px solid #A60000;}
+.border li:nth-child(7):hover {border-right: 10px solid #A60000;}
+.border li:nth-child(8):hover {border-right: 10px solid #A60000;}
+footer {
+  text-align: center;
+}
+.img1{
+  width: 100px;
+}
+.content{
+ float: center;
+  margin-right:15%;
+  margin-left: 15%;
+  padding: 10px;
+  background-color: white;
+  opacity: 1;
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+h1{
+  color: #A60000;
+}
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+.spisok {
+   padding-left: 40px;
+   margin-top: 1em;
+   margin-bottom: 1em;
+}
+ul{
+  list-style: none;
+}
+.center-img {
+  display: block;
+  margin: 0 auto;
+}
+table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 15px;
+        text-align: center;
+    }
